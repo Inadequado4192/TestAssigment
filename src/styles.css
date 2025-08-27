@@ -1,0 +1,122 @@
+:root {
+    --text-primary: #DDD;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #262626;
+    color: var(--text-primary);
+    font-family: sans-serif;
+}
+
+body,
+#root {
+    height: 100vh;
+}
+
+
+
+
+
+#board {
+    border: 2px solid #000;
+    width: 400px;
+    height: 400px;
+    background: var(--text-primary);
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+#board .line {
+    flex: 1;
+}
+#board .line:not(:last-child) {
+    border-bottom: 1px solid #000;
+}
+#board .cell {
+    flex: 1;
+    cursor: pointer;
+    color: #000;
+    /* font-size: 5vw; */
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+#board .cell:not(:last-child)  {
+    border-right: 1px solid #000;
+}
+
+
+
+
+
+button {
+    outline: none;
+    border: none;
+    color: var(--text-primary);
+    background: #3f3f3f;
+    padding: 8px;
+    cursor: pointer;
+}
+button:hover {
+    background: #494949;
+}
+button:active {
+    background: #535353;
+}
+
+
+
+.stack {
+    display: flex;
+}
+
+.stack.row {
+    flex-direction: row
+}
+
+.stack.column {
+    flex-direction: column
+}
+
+.stack.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.stack.gap-1 { gap: 8px; }
+.stack.gap-2 { gap: 16px; }
+.stack.gap-3 { gap: 24px; }
+.stack.gap-4 { gap: 32px; }
+.stack.gap-5 { gap: 40px; }
+
+
+
+
+
+.modal {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(2px);
+
+    z-index: 10;
+}
+
+.modal > .dialog {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+
+    max-width: 90vh;
+    min-width: 300px;
+
+    background: #262626;
+    padding: 16px;
+}
